@@ -5,6 +5,8 @@
 Uses an OV7670 non-FIFO VGA camera module to take a picture on the press of a button, and 
 save the image as a JPEG on a MicroSD card.
 
+In this configuration, the Arduino requires a USB connection to power itself and the circuit.
+
 The Camera Code requires the following gcc libraries:
 	stdint.h
 	avr/io.h
