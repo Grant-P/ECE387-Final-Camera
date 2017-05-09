@@ -32,7 +32,7 @@ The Frame Grabber requires the following gcc libraries:
 	setjmp.h
 	
 Pin Connections:
-	MicroSD Adaptor <->  Uno
+	MicroSD Adaptor <->  Uno (Incomplete, do not attach.  For future reference only)
 		  CS - D10
 		 SCK - D13
 		MOSI - D11***
@@ -44,14 +44,14 @@ Pin Connections:
 			  3v3 - 3v3
 			  GND - GND
 			 SIOC - A5
-		SIOC - 10 kOhm - 3v3
+		   SIOC - 10 kOhm - 3v3
 			 SIOD - A4
-		SIOD - 10 kOhm - 3v3
+		   SIOD - 10 kOhm - 3v3
 			VSYNC - D3
-	  HREF - Floating, or GND
+		  HREF - Floating, or GND
 			 PCLK - D2
-	   XCLK - 4.7 kOhm - D11***
-	   XCLK - 4.7 kOhm - GND
+		   XCLK - 4.7 kOhm - D11
+		   XCLK - 4.7 kOhm - GND
 			   D7 - D7
 			   D6 - D6
 			   D5 - D5
@@ -68,3 +68,24 @@ Pin Connections:
 		1 - D9
 		2 - 5V
 	
+Instructions to run from ~bash terminal, tested on Kubuntu 17.04
+	cd to Camera_Code/
+		make clean
+		make hex
+		make writeflash
+		
+	cd to Frame_Grabber/
+		./build
+		Now, there are several options for the executable:
+			./qqvga
+				Lowest quality, fastest transfer
+			./qvga
+				Medium quality and transfer speed
+			./vga
+				Highest quality, slowest transfer
+		If the command fails and prints "no such file or directory", type ls /dev.  If your Arduino is
+		connected correctly, one of the items displayed should say "ttyACM*" where "*" is some number.
+		Go back to whichever script you are using, and open it in a text editor.  Where it says
+		"/dev/ttyACM0", replace "0" with whichever port was displayed.  Run the command again to execute.
+		
+	Once upload is complete, the camera is ready.  Press the button to take a picture.
