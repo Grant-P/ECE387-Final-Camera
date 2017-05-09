@@ -1,5 +1,7 @@
 # ECE387-Final-Camera
 # Author: Grant P
+# Based on code from https://github.com/ComputerNerd/ov7670-no-ram-arduino-uno
+		 and https://github.com/ComputerNerd/simpleFrameGrabber
 # 10 May 2017
 
 Uses an OV7670 non-FIFO VGA camera module to take a picture on the press of a button, and 
